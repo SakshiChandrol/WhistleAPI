@@ -40,7 +40,7 @@ class WhistleApiApplicationTests {
       User user = new User("104","mini", "chandrol","mini1234@gmail.com", "mini12345", "7389493428","test1234");
       expected.add(user);
 		List<User> actual = repository.findAll();
-		assertEquals(expected.size(), actual.size());
+		assertEquals(expected, actual);
 	}
 
 	@Test
@@ -49,7 +49,7 @@ class WhistleApiApplicationTests {
 		when(repository.findByLoginId(fname)).thenReturn((new User("104","mini", "chandrol","mini1234@gmail.com", "mini12345", "7389493428","test1234")));	
 		User actual = repository.findByLoginId(fname);
 		User expected	 = new User("104","mini", "chandrol","mini1234@gmail.com", "mini12345", "7389493428","test1234");
-		assertEquals(expected.equals(actual),actual.equals(expected));	
+		assertEquals(expected, actual);	
 	}
 	
 	@Test
@@ -58,7 +58,7 @@ class WhistleApiApplicationTests {
 		when(repository.findByLoginId(loginid)).thenReturn((new User("104","mini", "chandrol","mini1234@gmail.com", "mini12345", "7389493428","test1234")));	
 		User actual = repository.findByLoginId(loginid);
 		User expected	 = new User("104","mini", "chandrol","mini1234@gmail.com", "mini12345", "7389493428","test1234");
-		assertEquals(expected.equals(actual),actual.equals(expected));	
+		assertEquals(expected, actual);
 	}
 	
 	@Test
@@ -70,7 +70,7 @@ class WhistleApiApplicationTests {
 		List <Tweet> expected	 = new ArrayList<Tweet>();
 		Tweet t =new Tweet( "1234568","1234567","SakshiChandrol","hi Anshul",  " 4h ago",0);
 		expected.add(t);
-		assertEquals(expected.size(),actual.size());		
+		assertEquals(expected, actual);	
 	}
 	
 	@Test
@@ -82,7 +82,7 @@ class WhistleApiApplicationTests {
 		List <Tweet> expected	 = new ArrayList<Tweet>();
 		Tweet t =new Tweet( "1234568","1234567","SakshiChandrol","hi Anshul", " 4h ago",0);
 		expected.add(t);
-		assertEquals(expected.size(),actual.size());
+		assertEquals(expected, actual);
 	}
 	
 	@Test
@@ -93,7 +93,7 @@ class WhistleApiApplicationTests {
 		List <Tweet> expected	 = new ArrayList<Tweet>();
 		Tweet t =new Tweet( "1234568","1234567","SakshiChandrol","hi Anshul", " 4h ago",0);
 		expected.add(t);
-		assertEquals(expected.size(),actual.size());
+		assertEquals(expected, actual);
 	}
 	
 	@Test
@@ -103,7 +103,7 @@ class WhistleApiApplicationTests {
 		User actual = repository.insert(user);
 		User expected	 = new User("104","mini", "chandrol","mini1234@gmail.com", "mini12345", "7389493428","test1234");
 		
-		assertEquals(expected.equals(actual),actual.equals(expected));
+		assertEquals(expected, actual);
 	}
 	
 	 
@@ -113,8 +113,7 @@ class WhistleApiApplicationTests {
 		when(repository.save(userWithLoginId)).thenReturn(new User("104","mini", "chandrol","mini1234@gmail.com", "mini12345", "7389493428","test1234"));	
 		User actual = repository.save(userWithLoginId);
 		User expected	 = new User("104","mini", "chandrol","mini1234@gmail.com", "mini12345", "7389493428","test1234");
-		
-		assertEquals(expected.equals(actual),actual.equals(expected)); 
+		assertEquals(expected, actual);
 	 }
 	 
 	 @Test
@@ -123,7 +122,7 @@ class WhistleApiApplicationTests {
 	 when(repo.insert(tweet)).thenReturn(new Tweet( "1234568","1234567","SakshiChandrol","hi Anshul",  " 4h ago",0));	
 		Tweet actual = repo.insert(tweet);
 		Tweet expected =new Tweet( "1234568","1234567","SakshiChandrol","hi Anshul", " 4h ago",0);
-		assertEquals(expected.equals(actual),actual.equals(expected)); 
+		assertEquals(expected, actual);
 	 }
 	 
 	 @Test
@@ -132,7 +131,7 @@ class WhistleApiApplicationTests {
 		 when(repo.save(updatedTweet)).thenReturn(new Tweet( "1234568","1234567","SakshiChandrol","hi Anshul !!!!!",  " 4h ago",0));	
 			Tweet actual = repo.save(updatedTweet);
 			Tweet expected =new Tweet( "1234568","1234567","SakshiChandrol","hi Anshul !!!!!", " 4h ago",0);
-			assertEquals(expected.equals(actual),actual.equals(expected));  
+			assertEquals(expected, actual);
 	 }
 	 
 	

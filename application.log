@@ -26,3 +26,82 @@
 2021-05-05 13:21:53.057  INFO 6288 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2021-05-05 13:21:53.109  INFO 6288 --- [http-nio-8089-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 52 ms
 2021-05-05 13:23:22.383  INFO 6288 --- [http-nio-8089-exec-6] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:687}] to localhost:27017
+2021-05-05 14:29:00.568  INFO 6288 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-05 14:29:00.594  INFO 6288 --- [Thread-5] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:3, serverValue:687}] to localhost:27017 because the pool has been closed.
+2021-05-05 14:29:01.975  INFO 6288 --- [restartedMain] com.tweet.WhistleApiApplication          : Starting WhistleApiApplication using Java 1.8.0_201 on Lab-637504499902861846-1 with PID 6288 (C:\Users\User\sts-workspace\WhistleApi\target\classes started by User in C:\Users\User\sts-workspace\WhistleApi)
+2021-05-05 14:29:01.979  INFO 6288 --- [restartedMain] com.tweet.WhistleApiApplication          : No active profile set, falling back to default profiles: default
+2021-05-05 14:29:03.428  INFO 6288 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-05-05 14:29:03.431  INFO 6288 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 MongoDB repository interfaces.
+2021-05-05 14:29:04.022  INFO 6288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
+2021-05-05 14:29:04.079  INFO 6288 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-05 14:29:04.080  INFO 6288 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-05 14:29:04.179  INFO 6288 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-05 14:29:04.180  INFO 6288 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2162 ms
+2021-05-05 14:29:10.317  INFO 6288 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-05 14:29:10.436  INFO 6288 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-05-05 14:29:10.478  INFO 6288 --- [cluster-ClusterId{value='60925e5e1445024f0276e5ec', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:688}] to localhost:27017
+2021-05-05 14:29:10.480  INFO 6288 --- [cluster-ClusterId{value='60925e5e1445024f0276e5ec', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=10307900}
+2021-05-05 14:29:10.483  INFO 6288 --- [cluster-rtt-ClusterId{value='60925e5e1445024f0276e5ec', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:689}] to localhost:27017
+2021-05-05 14:29:10.547  INFO 6288 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-05 14:29:10.723  INFO 6288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path ''
+2021-05-05 14:29:10.750  INFO 6288 --- [restartedMain] com.tweet.WhistleApiApplication          : Started WhistleApiApplication in 9.31 seconds (JVM running for 4352.013)
+2021-05-05 14:29:10.755  INFO 6288 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-05-05 14:29:10.756  INFO 6288 --- [restartedMain] com.tweet.WhistleApiApplication          : WhistleApiApplication
+2021-05-05 14:29:12.305  INFO 6288 --- [Thread-9] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-05-05 14:29:12.727  INFO 6288 --- [restartedMain] com.tweet.WhistleApiApplication          : Starting WhistleApiApplication using Java 1.8.0_201 on Lab-637504499902861846-1 with PID 6288 (C:\Users\User\sts-workspace\WhistleApi\target\classes started by User in C:\Users\User\sts-workspace\WhistleApi)
+2021-05-05 14:29:12.729  INFO 6288 --- [restartedMain] com.tweet.WhistleApiApplication          : No active profile set, falling back to default profiles: default
+2021-05-05 14:29:13.480  INFO 6288 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-05-05 14:29:13.546  INFO 6288 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 2 MongoDB repository interfaces.
+2021-05-05 14:29:13.721  INFO 6288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8089 (http)
+2021-05-05 14:29:13.735  INFO 6288 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-05 14:29:13.735  INFO 6288 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-05-05 14:29:13.765  INFO 6288 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-05 14:29:13.766  INFO 6288 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1028 ms
+2021-05-05 14:29:13.815  INFO 6288 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-05-05 14:29:13.853  INFO 6288 --- [cluster-ClusterId{value='60925e611445024f0276e5ed', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:690}] to localhost:27017
+2021-05-05 14:29:13.857  INFO 6288 --- [cluster-ClusterId{value='60925e611445024f0276e5ed', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=6228300}
+2021-05-05 14:29:13.857  INFO 6288 --- [cluster-rtt-ClusterId{value='60925e611445024f0276e5ed', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:7, serverValue:691}] to localhost:27017
+2021-05-05 14:29:13.874  INFO 6288 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-05-05 14:29:14.204  INFO 6288 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-05-05 14:29:14.267  INFO 6288 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-05 14:29:14.411  INFO 6288 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8089 (http) with context path ''
+2021-05-05 14:29:14.415  INFO 6288 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-05-05 14:29:14.418  INFO 6288 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-05-05 14:29:14.428  INFO 6288 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-05-05 14:29:14.699  INFO 6288 --- [restartedMain] com.tweet.WhistleApiApplication          : Started WhistleApiApplication in 2.05 seconds (JVM running for 4355.962)
+2021-05-05 14:29:14.712  INFO 6288 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   Swagger2DocumentationConfiguration matched:
+      - @ConditionalOnWebApplication (required) found 'session' scope (OnWebApplicationCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2021-05-05 14:29:14.715  INFO 6288 --- [restartedMain] com.tweet.WhistleApiApplication          : WhistleApiApplication
+2021-05-05 14:33:29.778  INFO 6288 --- [Thread-14] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
