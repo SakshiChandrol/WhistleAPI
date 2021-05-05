@@ -15,6 +15,7 @@ public interface UserRepository extends MongoRepository<User, Long> {
 	User findByLoginId(String name);
 	@Query("{'loginid': ?0, 'pwd':?1}")
 	Login getUser(String loginid, String pwd);
+	
 }
 
 

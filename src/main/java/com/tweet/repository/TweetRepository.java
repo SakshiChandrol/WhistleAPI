@@ -12,7 +12,7 @@ import com.tweet.model.Tweet;
 @Repository
 public interface TweetRepository extends MongoRepository<Tweet, String> {
 	 @Query("{'userid': ?0}")
-		List<Tweet> findByUserName(String userid);
+		List<Tweet> findByUserName(String fname);
 	 @Query("{'parentId': ?0 }")
 	    List<Tweet> findByParentId(String parentId);
 }

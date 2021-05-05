@@ -24,6 +24,8 @@ public class UserService {
 		boolean isExisting = false;
 		String email=user.getEmail();
 		String loginId=user.getLoginid();
+		String id = idGenrator();
+		user.setId(id);
 		if(email != null && !"".equals(email)&&loginId != null && !"".equals(loginId)) {
 			isExisting = checkExistingUser(email,loginId);
 		}
@@ -34,16 +36,36 @@ public class UserService {
 		
 	}
 	
-	public void getUser(Login login) throws Exception {
+	private String idGenrator() {
+		  int min = 100;  
+		  int max = 999;  
+		        int b = (int)(Math.random()*(max-min+1)+min); 
+		        System.out.println(b);
+		return String.valueOf(b);
+	}
+
+	public User getUser(Login login) throws Exception {
+		User userWithLoginId;
+		boolean isLoggedIn=false;
 		String loginid = login.getLoginid();
 		String pwd = login.getPwd();
 		if(loginid != null &&  !"".equals(loginid) && pwd != null &&  !"".equals(pwd)) {
 			Login loginWithCred = userRepository.getUser(loginid,pwd);
+		System.out.println(loginWithCred);
 			if(!(loginid.equals(loginWithCred.getLoginid())) && !(pwd.equals(loginWithCred.getPwd())))
 			{
 				throw new Exception("data not present");
 			}
+			else {
+				userWithLoginId=userRepository.findByLoginId(loginid);
+			    isLoggedIn = true;
+			    userWithLoginId.setLogged(isLoggedIn);;
+			}
 		}
+		else {
+			throw new Exception("null");
+		}
+		return userWithLoginId;
 		
 	}
 	
@@ -65,15 +87,14 @@ public class UserService {
 			return true;	
 	}
 
-	public List<String> getUsers() {
-		List<String> allUser =  new ArrayList<String>();
+	public List<User> getUsers() {
 		 List<User> users = userRepository.findAll();
-		 for(User user : users) {
-			 String firstName=user.getFname();
-			 String lastName =user.getLname();
-			 allUser.add(firstName+" "+lastName);
-		 }
-		 return allUser;
+		 return users;
+	}
+
+	public User getFname(String fname) {
+		System.out.println(userRepository.findByLoginId(fname));
+		return userRepository.findByLoginId(fname);
 	}
 
 

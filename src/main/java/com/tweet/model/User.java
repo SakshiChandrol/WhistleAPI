@@ -19,7 +19,13 @@ public class User {
 	private String loginid;
 	private String pwd;
 	private String phone;
+	private boolean isLogged;
 	
+	
+	public User() {
+		
+		// TODO Auto-generated constructor stub
+	}
 	public User(String id, String fname, String lname, String email, String loginid, String pwd,
 			String phone) {
 		super();
@@ -73,6 +79,12 @@ public class User {
 	}
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+	public boolean isLogged() {
+		return isLogged;
+	}
+	public void setLogged(boolean isLogged) {
+		this.isLogged = isLogged;
 	}
 	
 }
