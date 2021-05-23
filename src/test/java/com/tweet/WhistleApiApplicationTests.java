@@ -1,29 +1,13 @@
 package com.tweet;
 
-import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.when;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import com.tweet.model.Tweet;
-import com.tweet.model.User;
-import com.tweet.repository.TweetRepository;
-import com.tweet.repository.UserRepository;
-import com.tweet.service.UserService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 class WhistleApiApplicationTests {
-	@MockBean
+	/*@MockBean
 	private UserService service;
 	
 	@MockBean

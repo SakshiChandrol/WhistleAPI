@@ -1,15 +1,23 @@
 package com.tweet.model;
 
-import org.springframework.data.mongodb.core.mapping.Document;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 
-@Document(collection = "tweets")
+@DynamoDBTable(tableName = "Tweet")
 public class Tweet {
 	
+	@DynamoDBHashKey
 	private String id;
+	@DynamoDBAttribute
 	private String parentId;
+	@DynamoDBAttribute
 	private String userid;
+	@DynamoDBAttribute
 	private String message;
+	@DynamoDBAttribute
 	private String postedAt;
+	@DynamoDBAttribute
 	private int likes;
 	
 	public String getId() {

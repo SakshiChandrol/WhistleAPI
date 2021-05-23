@@ -3,6 +3,7 @@ package com.tweet.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tweet.exception.EntityNotFoundException;
@@ -13,12 +14,8 @@ import com.tweet.repository.UserRepository;
 @Service
 public class UserService {
 	
-	private final UserRepository userRepository;
-
-	public UserService(UserRepository userRepository) {
-		super();
-		this.userRepository = userRepository;
-	}
+	@Autowired
+	private UserRepository userRepository;
 	
 	public User registerUser(User user) throws Exception {
 		boolean isExisting = false;
@@ -32,7 +29,7 @@ public class UserService {
 		if(!isExisting) {
 			throw new EntityNotFoundException(String.format("User already present"));
 		}
-		return userRepository.insert(user);
+		return userRepository.save(user);
 		
 	}
 	

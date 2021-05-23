@@ -1,21 +1,46 @@
 package com.tweet.repository;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.mongodb.repository.Query;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
 import com.tweet.model.Login;
+import com.tweet.model.Tweet;
 import com.tweet.model.User;
 
 @Repository
-public interface UserRepository extends MongoRepository<User, Long> {
-	@Query("{'email': ?0}")
-	User findByEmail(String name);
-	@Query("{'loginid': ?0}")
-	User findByLoginId(String name);
-	@Query("{'loginid': ?0, 'pwd':?1}")
-	Login getUser(String loginid, String pwd);
+public class UserRepository {
+
+
+	@Autowired
+	private DynamoDBMapper dynamoDBMapper;
 	
+	public User save(User user) {
+		dynamoDBMapper.batchSave(user);
+		return user;
+	}
+
+	public User findByEmail(String email) {
+		User result = dynamoDBMapper.load(User.class, email);
+		return result;
+	}
+
+	public User findByLoginId(String loginid) {
+		User result = dynamoDBMapper.load(User.class, loginid);
+	return result;
+	}
+
+	public List<User> findAll() {
+		DynamoDBScanExpression scanner = new DynamoDBScanExpression();
+		List<User> result = dynamoDBMapper.scan(User.class, scanner);
+		return result;
+	}
+
+	public Login getUser(String loginid, String pwd) {
+		Login result = dynamoDBMapper.load(Login.class, loginid,pwd);
+		return result;
+	}
 }
-
-

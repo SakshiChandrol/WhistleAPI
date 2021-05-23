@@ -2,26 +2,21 @@ package com.tweet.service;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tweet.exception.EntityNotFoundException;
 import com.tweet.model.Tweet;
-import com.tweet.model.User;
 import com.tweet.repository.TweetRepository;
 import com.tweet.repository.UserRepository;
 
 @Service
 public class TweetService {
-	
+	@Autowired
 	private TweetRepository tweetRepository;
+	@SuppressWarnings("unused")
+	@Autowired
 	private UserRepository userRepository;
-
-	public TweetService(TweetRepository tweetRepository) {
-		super();
-		this.tweetRepository = tweetRepository;
-	}
 
 	private String idGenrator() {
 		  int min = 100;  
@@ -41,16 +36,13 @@ public class TweetService {
 			tweet.setLikes(0);
 		 tweet.setPostedAt(str);
 		tweet.setUserid(username);
-		return tweetRepository.insert(tweet);
+		return tweetRepository.save(tweet);
 		
 	}
 
 	public Tweet updateTweet(Tweet tweet, String id) throws EntityNotFoundException {
-		Optional<Tweet> requestedTweet=tweetRepository.findById(id);
-		if(!requestedTweet.isPresent()) {
-			throw new EntityNotFoundException(String.format("No tweet found"));
-		}
-		Tweet updatedTweet =requestedTweet.get();
+		List<Tweet> requestedTweet=tweetRepository.findById(id);
+		Tweet updatedTweet =requestedTweet.get(1);
 		updatedTweet.setMessage(tweet.getMessage());
 		return tweetRepository.save(updatedTweet);
 		}
@@ -58,8 +50,8 @@ public class TweetService {
 	public List<Tweet> getAllTweet(String fname) {
 		
 		String userid=fname;
-		System.out.println(tweetRepository.findByUserName(userid));
-		return tweetRepository.findByUserName(userid);
+		System.out.println(tweetRepository.findByUserid(userid));
+		return tweetRepository.findByUserid(userid);
 	}
 	public List<Tweet> getRepliedTweet(String userid,String id ) {
 		System.out.println(tweetRepository.findByParentId(id));
@@ -80,15 +72,12 @@ public class TweetService {
 		 tweet.setPostedAt(str);
 		tweet.setUserid(Username);
 		tweet.setParentId(parentid);
-		return tweetRepository.insert(tweet);
+		return tweetRepository.save(tweet);
 		
 	}
 	public Tweet likeTweet(String id) throws EntityNotFoundException {
-		Optional<Tweet> requestedTweet=tweetRepository.findById(id);
-		if(!requestedTweet.isPresent()) {
-			throw new EntityNotFoundException(String.format("No tweet found"));
-		}
-		Tweet updatedTweet =requestedTweet.get();
+		List<Tweet> requestedTweet=tweetRepository.findById(id);
+		Tweet updatedTweet =requestedTweet.get(1);
 		int currentLikes=updatedTweet.getLikes();
 		updatedTweet.setLikes(++currentLikes);
 		return tweetRepository.save(updatedTweet);

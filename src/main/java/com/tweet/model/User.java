@@ -1,24 +1,26 @@
 package com.tweet.model;
 
-import java.util.List;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document(collection="user")
+@DynamoDBTable(tableName = "User")
 public class User {
-	@Id
+	@DynamoDBHashKey
 	private String id;
-	private String fname;	
+	@DynamoDBAttribute
+	private String fname;
+	@DynamoDBAttribute
 	private String lname;
-	@Indexed(unique=true)
+	@DynamoDBAttribute
 	private String email;
-	@Indexed(unique=true)
+	@DynamoDBAttribute
 	private String loginid;
+	@DynamoDBAttribute
 	private String pwd;
+	@DynamoDBAttribute
 	private String phone;
+	@DynamoDBAttribute
 	private boolean isLogged;
 	
 	
