@@ -47,7 +47,7 @@ public class UserService {
 		String loginid = login.getLoginid();
 		String pwd = login.getPwd();
 		if(loginid != null &&  !"".equals(loginid) && pwd != null &&  !"".equals(pwd)) {
-			Login loginWithCred = userRepository.getUser(loginid,pwd);
+			Login loginWithCred = userRepository.getUser(loginid);
 		System.out.println(loginWithCred);
 			if(!(loginid.equals(loginWithCred.getLoginid())) && !(pwd.equals(loginWithCred.getPwd())))
 			{
