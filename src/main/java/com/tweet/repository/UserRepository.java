@@ -39,8 +39,8 @@ public class UserRepository {
 		return result;
 	}
 
-	public Login getUser(String loginid) {
-		Login result = dynamoDBMapper.load(Login.class, loginid);
-		return result;
-	}
+	//public Login getUser(String loginid) {
+	//	Login result = dynamoDBMapper.load(User.class, loginid);
+	//	return result;
+	//}
 }

@@ -40,28 +40,30 @@ public class UserService {
 		        System.out.println(b);
 		return String.valueOf(b);
 	}
+	
+	
 
 	public User getUser(Login login) throws Exception {
 		User userWithLoginId;
 		boolean isLoggedIn=false;
 		String loginid = login.getLoginid();
 		String pwd = login.getPwd();
-		if(loginid != null &&  !"".equals(loginid) && pwd != null &&  !"".equals(pwd)) {
-			Login loginWithCred = userRepository.getUser(loginid);
-		System.out.println(loginWithCred);
-			if(!(loginid.equals(loginWithCred.getLoginid())) && !(pwd.equals(loginWithCred.getPwd())))
-			{
-				throw new Exception("data not present");
-			}
-			else {
-				userWithLoginId=userRepository.findByLoginId(loginid);
-			    isLoggedIn = true;
-			    userWithLoginId.setLogged(isLoggedIn);;
-			}
-		}
-		else {
-			throw new Exception("null");
-		}
+		//if(loginid != null &&  !"".equals(loginid) && pwd != null &&  !"".equals(pwd)) {
+			//Login loginWithCred = userRepository.getUser(loginid);
+		//System.out.println(loginWithCred);
+			//if(!(loginid.equals(loginWithCred.getLoginid())) && !(pwd.equals(loginWithCred.getPwd())))
+			//{
+			////	throw new Exception("data not present");
+		//	}
+		//	else {
+				userWithLoginId=userRepository.findByEmail(loginid);
+		//	    isLoggedIn = true;
+	//		    userWithLoginId.setLogged(isLoggedIn);
+			//}
+	//	}
+		//else {
+		///	throw new Exception("null");
+		//}
 		return userWithLoginId;
 		
 	}

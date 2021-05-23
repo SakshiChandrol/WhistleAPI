@@ -1,3 +1,4 @@
-FROM openjdk:8
-COPY target/WhistleApi-0.0.1-SNAPSHOT.jar WhistleApi-0.0.1-SNAPSHOT.jar 
-CMD java -jar WhistleApi-0.0.1-SNAPSHOT.jar 
+FROM java:8
+EXPOSE 8090
+ADD target/whistle.jar whistle.jar
+ENTRYPOINT ["java","-jar","whistle.jar"]

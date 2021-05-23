@@ -1,7 +1,7 @@
 package com.tweet;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.Logger;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -12,18 +12,18 @@ import sun.rmi.runtime.Log;
 @SpringBootApplication
 public class WhistleApiApplication {
 	
-	private static final Logger logger = LogManager.getLogger(WhistleApiApplication.class);
+	//private static final Logger logger = LogManager.getLogger(WhistleApiApplication.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(WhistleApiApplication.class, args);
-		   logger.info("WhistleApiApplication");
+		   //logger.info("WhistleApiApplication");
 	}
 	
-	public void run(ApplicationArguments applicationArguments) throws Exception {
+	/*public void run(ApplicationArguments applicationArguments) throws Exception {
         logger.debug("Debugging log");
         logger.info("Info log");
         logger.warn("Hey, This is a warning!");
         logger.error("Oops! We have an Error. OK");
         logger.fatal("Damn! Fatal error. Please fix me.");
-    }
+    }*/
 }
