@@ -117,6 +117,6 @@ class WhistleApiApplicationTests {
 			Tweet expected =new Tweet( "1234568","1234567","SakshiChandrol","hi Anshul !!!!!", " 4h ago",0);
 			assertEquals(expected, actual);
 	 }
-	 
+	 */
 	
 }
